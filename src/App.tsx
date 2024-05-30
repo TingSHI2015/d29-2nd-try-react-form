@@ -14,7 +14,7 @@ export default function App() {
             <Routes>
                 <Route path="/" element={<HomePage/>}/>
                 <Route path="characters" element={<CharacterPage/>}/>
-                <Route path="/detail/:id" element={<CharacterDetailsPage/>}/>
+                <Route path="/characters/:id" element={<CharacterDetailsPage/>}/>
 
 
             </Routes>
