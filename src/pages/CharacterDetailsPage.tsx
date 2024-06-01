@@ -1,13 +1,21 @@
 import {useParams} from "react-router-dom";
 import CharacterCard from "../components/CharacterCard.tsx";
-import {characters} from "../Characters.ts";
+import {useState} from "react";
+import {Character} from "../types/RickAndMortyCharacter.ts";
+//import {characters} from "../Characters.ts";
 
-export default function CharacterDetailsPage(){
+type CharacterDetailsPageProps = {
+    characters: Character[]
+}
+
+export default function CharacterDetailsPage(props: CharacterDetailsPageProps){
 
     const params = useParams();
     const id = params.id;
 
-    const character = characters.find((character) => character.id ===Number(id));
+
+    const character = props.characters.find((character) => character.id ===Number(id));
+    console.log(id);
     console.log(Number(id));
 
     if (character === undefined){

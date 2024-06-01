@@ -3,14 +3,14 @@ export type Character = {
     name: string,
     status: string,
     species: string,
-    type: string,
-    gender: string,
-    origin: Origin,
-    location: Location,
-    image: string,
-    episode: string[],
-    url: string,
-    created: string
+    // type: string,
+    // gender: string,
+    // origin: Origin,
+    // location: Location,
+    // image: string,
+    // episode: string[],
+    // url: string,
+    // created: string
 }
 
 export type Origin = {

@@ -1,3 +1,4 @@
+/*
 import {Character} from "./types/RickAndMortyCharacter.ts";
 
 export const characters: Character[] = [
@@ -664,3 +665,4 @@ export const characters: Character[] = [
         "created": "2017-11-04T22:34:53.659Z"
     }
 ]
+*/
