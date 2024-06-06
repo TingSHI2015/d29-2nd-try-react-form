@@ -4,15 +4,14 @@ import CharacterPage from "./pages/CharacterPage.tsx";
 import Header from "./components/Header.tsx";
 import HomePage from "./pages/HomePage.tsx";
 import CharacterDetailsPage from "./pages/CharacterDetailsPage.tsx";
-import {useState} from "react";
+import {useEffect, useState} from "react";
 import {Character} from "./types/RickAndMortyCharacter.ts";
 import axios from "axios";
-import {Simulate} from "react-dom/test-utils";
-import error = Simulate.error;        //import * as axios from "axios";
 
 
 
 export default function App() {
+    console.log("start")
     const [characters, setCharacters] = useState<Character[]>([])
 
     const loadAllCharacters = () =>{
@@ -24,6 +23,16 @@ export default function App() {
             .catch((error) => {console.log(error)})
             .finally(() =>{console.log("finally")})
     }
+
+
+    //dangerous!!!! can cause high cost!!!should use "useEffect" ----  // loadAllCharacters()
+    useEffect(() => {
+        loadAllCharacters()
+        console.log("useEffect")
+    }, []);
+
+
+
 
     //save new Character to a local List (without Axios)
 /*    const saveCharacter = (newCharacter: Character) =>{
@@ -43,6 +52,8 @@ export default function App() {
 
     }
 
+
+    console.log("return")
     return (
         <>
             <Header/>
